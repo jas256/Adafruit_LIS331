@@ -1,11 +1,10 @@
-# Adafruit LIS3DH [![Build Status](https://github.com/adafruit/Adafruit_LIS3DH/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_LIS3DH/actions)
+# Adafruit LIS331 [![Build Status](https://github.com/adafruit/Adafruit_LIS331/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_LIS331/actions)
 
-<a href="https://www.adafruit.com/products/2809"><img src="assets/image.jpg?raw=true" width="500px" /></a>
+<a href="https://www.adafruit.com/products/4XXX"><img src="assets/image.jpg?raw=true" width="500px" /></a>
 
-This is the Arduino library for the Adafruit LIS3X family of 3-axis Accelerometers.
+This is the Arduino library for the Adafruit LIS331 family of 3-axis Accelerometers.
 
 ## Supported Hardware
-* [LIS3DH 3-Axis Accelerometer](https://www.adafruit.com/products/2809)
 * [LIS331HH High-g 3-Axis Accelerometer](https://www.adafruit.com/products/4XXX)
 * [H3LIS331 Very High-g 3-Axis Accelerometer](https://www.adafruit.com/products/4XXX)
 
@@ -18,7 +17,7 @@ There's an address selection pin so you can have two accelerometers share an I2C
 
 # Contributing
 
-Contributions are welcome! Please read our [Code of Conduct](https://github.com/adafruit/Adafruit_LIS3DH/blob/master/CODE_OF_CONDUCT.md>)
+Contributions are welcome! Please read our [Code of Conduct](https://github.com/adafruit/Adafruit_LIS331/blob/master/CODE_OF_CONDUCT.md>)
 before contributing to help this project stay welcoming.
 Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!
 ## Documentation and doxygen
@@ -34,4 +33,4 @@ Written by Bryan Siepert / K. Townsend / Limor Fried for Adafruit Industries.
 BSD license, check license.txt for more information
 All text above must be included in any redistribution
 
-To install, use the Arduino Library Manager and search for "Adafruit LIS3DH" and install the library.
+To install, use the Arduino Library Manager and search for "Adafruit LIS331" and install the library.
