@@ -1,4 +1,4 @@
-# Adafruit LIS331 [![Build Status](https://github.com/adafruit/Adafruit_LIS331/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_LIS331/actions)
+# Adafruit LIS331 [![Build Status](https://github.com/adafruit/Adafruit_LIS331/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_LIS331/actions)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](http://adafruit.github.io/Adafruit_LIS331/html/index.html)
 
 <a href="https://www.adafruit.com/products/4XXX"><img src="assets/image.jpg?raw=true" width="500px" /></a>
 
