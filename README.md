@@ -1,6 +1,6 @@
 # Adafruit LIS331 [![Build Status](https://github.com/adafruit/Adafruit_LIS331/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_LIS331/actions)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](http://adafruit.github.io/Adafruit_LIS331/html/index.html)
 
-<a href="https://www.adafruit.com/products/4XXX"><img src="assets/image.jpg?raw=true" width="500px" /></a>
+<a href="https://www.adafruit.com/products/4XXX"><img src="" width="500px" /></a>
 
 This is the Arduino library for the Adafruit LIS331 family of 3-axis Accelerometers.
 
