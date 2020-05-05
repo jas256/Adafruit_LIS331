@@ -81,12 +81,15 @@ void Adafruit_LIS3X::read(void) {
  * @brief Setup  the INT1 or INT2 pin to trigger when new data is ready
  *
  * @param irqnum The interrupt number/pin to configure
- * @param polarity The polarity of the pin. true: active low false: active high
- * @param opendrain The pinmode for the given interrupt pin. true: open drain. Connects to GND when activated false: push-pull: connects to VCC when activated
+ * @param activelow The polarity of the pin. true: active low false: active high
+ * @param opendrain The pinmode for the given interrupt pin. true: open drain.
+ * Connects to GND when activated false: push-pull: connects to VCC when
+ * activated
  * @return true
  * @return false
  */
-bool Adafruit_LIS3X::configIntDataReady(uint8_t irqnum, bool activelow, bool opendrain){
+bool Adafruit_LIS3X::configIntDataReady(uint8_t irqnum, bool activelow,
+                                        bool opendrain) {
   Adafruit_BusIO_Register ctrl3_reg = Adafruit_BusIO_Register(
       i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS3X_REG_CTRL3, 1);
 
@@ -96,12 +99,12 @@ bool Adafruit_LIS3X::configIntDataReady(uint8_t irqnum, bool activelow, bool ope
       Adafruit_BusIO_RegisterBits(&ctrl3_reg, 2, 0);
   Adafruit_BusIO_RegisterBits int2_bits =
       Adafruit_BusIO_RegisterBits(&ctrl3_reg, 2, 3);
-  opendrain_and_polarity_bits.write( (activelow<<1) | (opendrain));
+  opendrain_and_polarity_bits.write((activelow << 1) | (opendrain));
 
-  if(irqnum == 1){
+  if (irqnum == 1) {
     int1_bits.write(0b10);
     int2_bits.write(0);
-  }else{
+  } else {
     int2_bits.write(0b10);
     int1_bits.write(0);
   }
