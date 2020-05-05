@@ -28,31 +28,22 @@ void setup(void) {
     Serial.println("Couldnt start");
     while (1) yield();
   }
-  Serial.println("H3LIS331 found!");
+  Serial.println("LIS331 found!");
 
-  // lis.setRange(H3LIS331_RANGE_100_G);   // 100, 200, or 400 G!
-  Serial.print("Range set to: ");
-  switch (lis.getRange()) {
-    case H3LIS331_RANGE_100_G: Serial.println("100 g"); break;
-    case H3LIS331_RANGE_200_G: Serial.println("200 g"); break;
-    case H3LIS331_RANGE_400_G: Serial.println("400 g"); break;
-  }
-  // lis.setDataRate(H3LIS331_DATARATE_1000_HZ);
-  Serial.print("Data rate set to: ");
-  switch (lis.getDataRate()) {
+  lis.setRange(H3LIS331_RANGE_100_G);   // 100, 200, or 400 G!
+  lis.setDataRate(H3LIS331_DATARATE_LOWPOWER_0_5_HZ);
 
-    case H3LIS331_DATARATE_POWERDOWN: Serial.println("Powered Down"); break;
-    case H3LIS331_DATARATE_50_HZ: Serial.println("50 Hz"); break;
-    case H3LIS331_DATARATE_100_HZ: Serial.println("100 Hz"); break;
-    case H3LIS331_DATARATE_400_HZ: Serial.println("400 Hz"); break;
-    case H3LIS331_DATARATE_1000_HZ: Serial.println("1000 Hz"); break;
-    case H3LIS331_DATARATE_LOWPOWER_0_5_HZ: Serial.println("0.5 Hz Low Power"); break;
-    case H3LIS331_DATARATE_LOWPOWER_1_HZ: Serial.println("1 Hz Low Power"); break;
-    case H3LIS331_DATARATE_LOWPOWER_2_HZ: Serial.println("2 Hz Low Power"); break;
-    case H3LIS331_DATARATE_LOWPOWER_5_HZ: Serial.println("5 Hz Low Power"); break;
-    case H3LIS331_DATARATE_LOWPOWER_10_HZ: Serial.println("10 Hz Low Power"); break;
+//  bool configIntDataReady(uint8_t irqnum=1, bool activelow=true, bool opendrain=true);
 
-  }
+  // INT1, active low, open drain, (while inactive, pin is high-impedence. When active pin is connected to GND)
+  lis.configIntDataReady(1, true, true);
+
+  // INT2, active low, push-pull, (When Active pin is connected to GND. While inactive, pin is connected to VCC)
+  //  lis.configIntDataReady(2, true, false);
+
+  // INT2, active high, push-pull, (When Active pin is connected to VCC. While inactive, pin is high-impedence)
+  //  lis.configIntDataReady(2, false, false);
+
 }
 
 void loop() {
@@ -72,5 +63,5 @@ void loop() {
   // Serial.print(" \tZ: "); Serial.print(event.acceleration.z / SENSORS_GRAVITY_STANDARD);
   // Serial.println(" g");
 
-  delay(1000);
+  delay(10);
 }
