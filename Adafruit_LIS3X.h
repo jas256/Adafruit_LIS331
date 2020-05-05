@@ -76,6 +76,22 @@
 #define LIS3X_REG_INT2THS 0x36 ///< INT2 acceleration threshold
 #define LIS3X_REG_INT2DUR 0x37 ///< INT3 duration threshold
 
+/** The high pass filter cutoff frequency */
+typedef enum hpf_cutoff {
+  LIS3X_HPF_0_02_ODR, ///< ODR/50
+  LIS3X_HPF_0_01_ODR, ///< ODR/100
+  LIS3X_HPF_0_005_ODR, ///< ODR/200
+  LIS3X_HPF_0_0025_ODR, ///< ODR/400
+} lis3x_hpf_cutoff_t;
+
+/** The low pass filter cutoff frequency **/
+typedef enum {
+  LIS3X_LPF_37_HZ,
+  LIS3X_LPF_74_HZ,
+  LIS3X_LPF_292_HZ,
+  LIS3X_LPF_780_HZ,
+
+} lis3x_lpf_cutoff_t;
 /** A structure to represent axes **/
 typedef enum {
   LIS3X_AXIS_X = 0x0,
@@ -101,7 +117,8 @@ public:
 
   bool getEvent(sensors_event_t *event);
   void getSensor(sensor_t *sensor);
-
+  void highPassFilter(bool filter_enabled, lis3x_hpf_cutoff_t cutoff);
+  void setLPFCutoff(lis3x_lpf_cutoff_t cutoff);
   virtual void _scaleValues(void);
   int16_t x; /**< x axis value */
   int16_t y; /**< y axis value */

@@ -36,6 +36,7 @@ typedef enum {
   H3LIS331_DATARATE_LOWPOWER_10_HZ = 0x18,
 } h3lis331dl_dataRate_t;
 
+
 /** A structure to represent scales **/
 typedef enum {
   H3LIS331_RANGE_100_G = 0x0,  ///< +/- 100g

@@ -110,6 +110,47 @@ bool Adafruit_LIS3X::configIntDataReady(uint8_t irqnum, bool activelow,
   }
 }
 
+/**************************************************************************/
+/*!
+    @brief Enables the high pass filter and/or slope filter
+    @param filter_enabled Whether to enable the slope filter (see datasheet)
+    @param cutoff The frequency below which signals will be filtered out
+*/
+/**************************************************************************/
+
+void Adafruit_LIS3X::highPassFilter(bool filter_enabled,
+                                     lis3x_hpf_cutoff_t cutoff) {
+  Adafruit_BusIO_Register ctrl2_reg = Adafruit_BusIO_Register(
+      i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS3X_REG_CTRL2);
+
+
+  Adafruit_BusIO_RegisterBits HPF_en =
+      Adafruit_BusIO_RegisterBits(&ctrl2_reg, 1, 6);
+
+  Adafruit_BusIO_RegisterBits HPF_internal_filter_en =
+      Adafruit_BusIO_RegisterBits(&ctrl2_reg, 1, 4);
+
+  Adafruit_BusIO_RegisterBits HPF_cuttoff =
+      Adafruit_BusIO_RegisterBits(&ctrl2_reg, 2, 0);
+
+  HPF_en.write(filter_enabled);
+  HPF_internal_filter_en.write(filter_enabled);
+  HPF_cuttoff.write(cutoff);
+}
+
+
+  void Adafruit_LIS3X::setLPFCutoff(lis3x_lpf_cutoff_t cutoff){
+      Adafruit_BusIO_Register _ctrl1 = Adafruit_BusIO_Register(
+      i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS3X_REG_CTRL1, 1);
+  Adafruit_BusIO_RegisterBits data_rate_bits =
+      // Adafruit_BusIO_RegisterBits(&_ctrl1, 4, 4);
+      Adafruit_BusIO_RegisterBits(&_ctrl1, 2, 3); // including LPen bit
+
+  data_rate_bits.write(cutoff);
+  }
+
+
+
 /**
  * @brief Scales the raw variables based on the current measurement range
  *
@@ -161,6 +202,8 @@ void Adafruit_LIS3X::writeDataRate(uint8_t dataRate) {
 
   data_rate_bits.write(dataRate);
 }
+//PM2 PM1 PM0 DR1 DR0
+
 
 /*!
  *   @brief  Gets the data rate for the LIS3X (controls power consumption)
