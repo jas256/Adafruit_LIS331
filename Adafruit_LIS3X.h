@@ -78,9 +78,9 @@
 
 /** The high pass filter cutoff frequency */
 typedef enum hpf_cutoff {
-  LIS3X_HPF_0_02_ODR, ///< ODR/50
-  LIS3X_HPF_0_01_ODR, ///< ODR/100
-  LIS3X_HPF_0_005_ODR, ///< ODR/200
+  LIS3X_HPF_0_02_ODR,   ///< ODR/50
+  LIS3X_HPF_0_01_ODR,   ///< ODR/100
+  LIS3X_HPF_0_005_ODR,  ///< ODR/200
   LIS3X_HPF_0_0025_ODR, ///< ODR/400
 } lis3x_hpf_cutoff_t;
 
@@ -92,6 +92,21 @@ typedef enum {
   LIS3X_LPF_780_HZ,
 
 } lis3x_lpf_cutoff_t;
+
+/** Used with register 0x2A (LIS331HH_REG_CTRL_REG1) to set bandwidth **/
+typedef enum {
+  LIS331_DATARATE_POWERDOWN = 0,
+  LIS331_DATARATE_50_HZ = 0x4,
+  LIS331_DATARATE_100_HZ = 0x5,
+  LIS331_DATARATE_400_HZ = 0x6,
+  LIS331_DATARATE_1000_HZ = 0x7,
+  LIS331_DATARATE_LOWPOWER_0_5_HZ = 0x8,
+  LIS331_DATARATE_LOWPOWER_1_HZ = 0xC,
+  LIS331_DATARATE_LOWPOWER_2_HZ = 0x10,
+  LIS331_DATARATE_LOWPOWER_5_HZ = 0x14,
+  LIS331_DATARATE_LOWPOWER_10_HZ = 0x18,
+} lis331_data_rate_t;
+
 /** A structure to represent axes **/
 typedef enum {
   LIS3X_AXIS_X = 0x0,
@@ -99,6 +114,16 @@ typedef enum {
   LIS3X_AXIS_Z = 0x2,
 } lis3x_axis_t;
 
+/**
+ * @brief Mode Options
+ *
+ */
+typedef enum {
+  LIS3X_MODE_SHUTDOWN,
+  LIS3X_MODE_NORMAL,
+  LIS3X_MODE_LOW_POWER // Low power is from 2-6 so checks against this should be
+                       // 'mode >=LIS3X_MODE_LOW_POWER'
+} lis331_mode_t;
 /*!
  *  @brief  Class that stores state and functions for interacting with
  *          Adafruit_LIS3X
@@ -117,8 +142,17 @@ public:
 
   bool getEvent(sensors_event_t *event);
   void getSensor(sensor_t *sensor);
-  void highPassFilter(bool filter_enabled, lis3x_hpf_cutoff_t cutoff);
-  void setLPFCutoff(lis3x_lpf_cutoff_t cutoff);
+  void enableHighPassFilter(bool filter_enabled, lis3x_hpf_cutoff_t cutoff, bool use_reference=false);
+  void setHPFReference(int8_t reference);
+  int8_t getHPFReference(void);
+  void HPFReset(void);
+  bool setLPFCutoff(lis3x_lpf_cutoff_t cutoff);
+
+  void setDataRate(lis331_data_rate_t dataRate);
+  lis331_data_rate_t getDataRate(void);
+
+  lis331_mode_t getMode(void);
+  lis331_mode_t getMode(lis331_data_rate_t rate);
   virtual void _scaleValues(void);
   int16_t x; /**< x axis value */
   int16_t y; /**< y axis value */
@@ -131,9 +165,6 @@ protected:
 
   Adafruit_I2CDevice *i2c_dev = NULL; ///< Pointer to I2C bus interface
   Adafruit_SPIDevice *spi_dev = NULL; ///< Pointer to I2C bus interface
-
-  void writeDataRate(uint8_t dataRate);
-  uint8_t readDataRate(void);
 
   void writeRange(uint8_t range);
   uint8_t readRange(void);

@@ -4,17 +4,20 @@
 #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_H3LIS331.h>
+#include <Adafruit_LIS331HH.h>
 #include <Adafruit_Sensor.h>
 
 // Used for software SPI
-#define H3LIS331_SCK 13
-#define H3LIS331_MISO 12
-#define H3LIS331_MOSI 11
+#define LIS331_SCK 13
+#define LIS331_MISO 12
+#define LIS331_MOSI 11
 // Used for hardware & software SPI
-#define H3LIS331_CS 10
+#define LIS331_CS 10
+unsigned long time;
+unsigned long last_time;
 
-
-Adafruit_H3LIS331 lis = Adafruit_H3LIS331();
+//Adafruit_H3LIS331 lis = Adafruit_H3LIS331();
+Adafruit_LIS331HH lis = Adafruit_LIS331HH();
 
 void setup(void) {
   Serial.begin(115200);
@@ -22,44 +25,53 @@ void setup(void) {
 
 //  Serial.println("H3LIS331 test!");
 
-//  if (!lis.begin_SPI(H3LIS331_CS)) {
-//  if (!lis.begin_SPI(H3LIS331_CS, H3LIS331_SCK, H3LIS331_MISO, H3LIS331_MOSI)) {
+//  if (!lis.begin_SPI(LIS331_CS)) {
+//  if (!lis.begin_SPI(LIS331_CS, LIS331_SCK, LIS331_MISO, LIS331_MOSI)) {
  if (! lis.begin_I2C()) {   // change this to 0x19 for alternative i2c address
     Serial.println("Couldnt start");
     while (1) yield();
   }
+  lis.setRange(LIS331HH_RANGE_6_G);
+//  lis.setLPFCutoff(LIS3X_LPF_37_HZ); // requires that DataRate is a LOW_POWER rate
+  lis.setDataRate(LIS331_DATARATE_50_HZ);
+//  lis.setHPFReference(127);
+//  ,-48.67
+//  ,-48.82
+//  ,-48.82
+//This register sets the acceleration value taken as a reference for the high-pass filter output.
+//When filter is turned onand HPM bits are set to “01”, filter out is generated taking this value as a reference
+//  lis.setHPFReference(255);
+//  ,10.17
+//  ,9.96
+//  ,10.02
+//  ,9.96
+//  ,10.02
+//  ,10.11
+//  HPFReset();
+  lis.setHPFReference(0);
 
-   lis.setRange(H3LIS331_RANGE_400_G);   // 100, 200, or 400 G!
-   lis.setDataRate(H3LIS331_DATARATE_LOWPOWER_10_HZ);
-//  Serial.print("Data rate set to: ");
-//  switch (lis.getDataRate()) {
-//
-//    case H3LIS331_DATARATE_POWERDOWN: Serial.println("Powered Down"); break;
-//    case H3LIS331_DATARATE_50_HZ: Serial.println("50 Hz"); break;
-//    case H3LIS331_DATARATE_100_HZ: Serial.println("100 Hz"); break;
-//    case H3LIS331_DATARATE_400_HZ: Serial.println("400 Hz"); break;
-//    case H3LIS331_DATARATE_1000_HZ: Serial.println("1000 Hz"); break;
-//    case H3LIS331_DATARATE_LOWPOWER_0_5_HZ: Serial.println("0.5 Hz Low Power"); break;
-//    case H3LIS331_DATARATE_LOWPOWER_1_HZ: Serial.println("1 Hz Low Power"); break;
-//    case H3LIS331_DATARATE_LOWPOWER_2_HZ: Serial.println("2 Hz Low Power"); break;
-//    case H3LIS331_DATARATE_LOWPOWER_5_HZ: Serial.println("5 Hz Low Power"); break;
-//    case H3LIS331_DATARATE_LOWPOWER_10_HZ: Serial.println("10 Hz Low Power"); break;
-//
-////  }
-  lis.setLPFCutoff(LIS3X_LPF_37_HZ);
-  lis.highPassFilter(true, LIS3X_HPF_0_0025_ODR);
+
+  lis.enableHighPassFilter(true, LIS3X_HPF_0_0025_ODR, true); //0.125Hz Cutoff
+//  Serial.print("HPF reference: ");Serial.println(lis.getHPFReference());
+
+  
+  time = micros();
+  last_time = time;
+//    1000 / 100 => 10.000000
 }
 
 void loop() {
   /* Get a new sensor event, normalized */
   sensors_event_t event;
   lis.getEvent(&event);
+  time = micros();
 
   /* Display the results (acceleration is measured in m/s^2) */
-  Serial.print(event.acceleration.x);
-  Serial.print(","); Serial.print(event.acceleration.y);
+//  Serial.print(event.acceleration.x);
+//  Serial.print(","); Serial.print(event.acceleration.y);
   Serial.print(","); Serial.print(event.acceleration.z);
+//  Serial.print(","); Serial.print((time-last_time)/1000);
   Serial.println();
-
-  delay(10);
+  last_time=time;
+  delayMicroseconds(1000);
 }

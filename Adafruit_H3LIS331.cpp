@@ -110,16 +110,9 @@ bool Adafruit_H3LIS331::_init(int32_t sensor_id) {
       i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS3X_REG_CTRL1, 1);
   _ctrl1.write(0x07); // enable all axes, normal mode
 
-  setDataRate(H3LIS331_DATARATE_1000_HZ);
+  setDataRate(LIS331_DATARATE_1000_HZ);
   setRange(H3LIS331_RANGE_400_G);
 
-  // Adafruit_BusIO_Register _ctrl4 = Adafruit_BusIO_Register(
-  //     i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS3X_REG_CTRL4, 1);
-  // _ctrl4.write(0x88); // High res & BDU enabled
-
-  // Adafruit_BusIO_Register _ctrl3 = Adafruit_BusIO_Register(
-  //     i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS3X_REG_CTRL3, 1);
-  // _ctrl3.write(0x10); // DRDY on INT1
   return true;
 }
 
@@ -143,25 +136,6 @@ void Adafruit_H3LIS331::_scaleValues(void) {
   x_g = ((float)x * lsb_value);
   y_g = ((float)y * lsb_value);
   z_g = ((float)z * lsb_value);
-}
-
-/*!
- *  @brief  Sets the data rate for the H3LIS331 (controls power consumption)
- *  @param  dataRate
- *          data rate value
- */
-void Adafruit_H3LIS331::setDataRate(h3lis331dl_dataRate_t dataRate) {
-
-  writeDataRate((uint8_t)dataRate);
-}
-
-/*!
- *   @brief  Gets the data rate for the H3LIS331 (controls power consumption)
- *   @return Returns Data Rate value
- */
-h3lis331dl_dataRate_t Adafruit_H3LIS331::getDataRate(void) {
-
-  return (h3lis331dl_dataRate_t)readDataRate();
 }
 
 /**

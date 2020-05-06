@@ -29,7 +29,7 @@ void setup(void) {
     while (1) yield();
   }
   lis.setRange(H3LIS331_RANGE_100_G);   // 6, 12, or 24 G
-  lis.setDataRate(H3LIS331_DATARATE_1000_HZ);
+  lis.setDataRate(LIS331_DATARATE_1000_HZ);
 }
 
 void loop() {

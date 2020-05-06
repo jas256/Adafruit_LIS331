@@ -22,21 +22,6 @@
 
 #include "Adafruit_LIS3X.h"
 
-/** Used with register 0x2A (H3LIS331_REG_CTRL_REG1) to set bandwidth **/
-typedef enum {
-  H3LIS331_DATARATE_POWERDOWN = 0,
-  H3LIS331_DATARATE_50_HZ = 0x4,
-  H3LIS331_DATARATE_100_HZ = 0x5,
-  H3LIS331_DATARATE_400_HZ = 0x6,
-  H3LIS331_DATARATE_1000_HZ = 0x7,
-  H3LIS331_DATARATE_LOWPOWER_0_5_HZ = 0x8,
-  H3LIS331_DATARATE_LOWPOWER_1_HZ = 0xC,
-  H3LIS331_DATARATE_LOWPOWER_2_HZ = 0x10,
-  H3LIS331_DATARATE_LOWPOWER_5_HZ = 0x14,
-  H3LIS331_DATARATE_LOWPOWER_10_HZ = 0x18,
-} h3lis331dl_dataRate_t;
-
-
 /** A structure to represent scales **/
 typedef enum {
   H3LIS331_RANGE_100_G = 0x0,  ///< +/- 100g
@@ -59,8 +44,6 @@ public:
                  int32_t sensor_id = 0);
   bool begin_SPI(int8_t cs_pin, int8_t sck_pin, int8_t miso_pin,
                  int8_t mosi_pin, int32_t sensor_id = 0);
-  void setDataRate(h3lis331dl_dataRate_t dataRate);
-  h3lis331dl_dataRate_t getDataRate(void);
 
   void setRange(h3lis331dl_range_t range);
   h3lis331dl_range_t getRange(void);
