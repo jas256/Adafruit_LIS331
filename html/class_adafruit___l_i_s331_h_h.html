@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Adafruit LIS3DH: Adafruit_LIS331HH Class Reference</title>
+<title>Adafruit LIS331 Arduino Driver: Adafruit_LIS331HH Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Adafruit LIS3DH
+   <div id="projectname">Adafruit LIS331 Arduino Driver
    </div>
   </td>
  </tr>
@@ -95,12 +95,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8795255ba0c7c4977b3e51744be0ee93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s331_h_h.html#a8795255ba0c7c4977b3e51744be0ee93">begin_SPI</a> (int8_t cs_pin, int8_t sck_pin, int8_t miso_pin, int8_t mosi_pin, int32_t sensor_id=0)</td></tr>
 <tr class="memdesc:a8795255ba0c7c4977b3e51744be0ee93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the hardware and initializes software SPI.  <a href="#a8795255ba0c7c4977b3e51744be0ee93">More...</a><br /></td></tr>
 <tr class="separator:a8795255ba0c7c4977b3e51744be0ee93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d3dfd0d8513fac3ec09261050481649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s331_h_h.html#a1d3dfd0d8513fac3ec09261050481649">setDataRate</a> (<a class="el" href="_adafruit___l_i_s331_h_h_8h.html#a575e263d4be877cca89e853ee421e98a">lis331hh_dataRate_t</a> dataRate)</td></tr>
-<tr class="memdesc:a1d3dfd0d8513fac3ec09261050481649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the data rate for the H3LIS331 (controls power consumption)  <a href="#a1d3dfd0d8513fac3ec09261050481649">More...</a><br /></td></tr>
-<tr class="separator:a1d3dfd0d8513fac3ec09261050481649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acddb8d123037bd1049205cbd4cd5bc38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_adafruit___l_i_s331_h_h_8h.html#a575e263d4be877cca89e853ee421e98a">lis331hh_dataRate_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s331_h_h.html#acddb8d123037bd1049205cbd4cd5bc38">getDataRate</a> (void)</td></tr>
-<tr class="memdesc:acddb8d123037bd1049205cbd4cd5bc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the data rate for the H3LIS331 (controls power consumption)  <a href="#acddb8d123037bd1049205cbd4cd5bc38">More...</a><br /></td></tr>
-<tr class="separator:acddb8d123037bd1049205cbd4cd5bc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85568ccf06a10dbea17db7f31a4ec947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s331_h_h.html#a85568ccf06a10dbea17db7f31a4ec947">setRange</a> (<a class="el" href="_adafruit___l_i_s331_h_h_8h.html#a9e9a7e5326c05b07aa8f29c4919d69ef">lis331hh_range_t</a> range)</td></tr>
 <tr class="memdesc:a85568ccf06a10dbea17db7f31a4ec947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the measurement range for the H3LIS331.  <a href="#a85568ccf06a10dbea17db7f31a4ec947">More...</a><br /></td></tr>
 <tr class="separator:a85568ccf06a10dbea17db7f31a4ec947"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,9 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad49e0621923c3b1de52a7a3722e7270f inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#ad49e0621923c3b1de52a7a3722e7270f">getDeviceID</a> (void)</td></tr>
 <tr class="memdesc:ad49e0621923c3b1de52a7a3722e7270f inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Device ID from LIS3X_REG_WHOAMI.  <a href="class_adafruit___l_i_s3_x.html#ad49e0621923c3b1de52a7a3722e7270f">More...</a><br /></td></tr>
 <tr class="separator:ad49e0621923c3b1de52a7a3722e7270f inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd6ab2080720155188c1641fc732bd5c inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#afd6ab2080720155188c1641fc732bd5c">haveNewData</a> (void)</td></tr>
-<tr class="memdesc:afd6ab2080720155188c1641fc732bd5c inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if new data available.  <a href="class_adafruit___l_i_s3_x.html#afd6ab2080720155188c1641fc732bd5c">More...</a><br /></td></tr>
-<tr class="separator:afd6ab2080720155188c1641fc732bd5c inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ebadfd0033853ba53302ffe95f744b4 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#a9ebadfd0033853ba53302ffe95f744b4">configIntDataReady</a> (uint8_t irqnum=1, bool activelow=true, bool opendrain=true)</td></tr>
+<tr class="memdesc:a9ebadfd0033853ba53302ffe95f744b4 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the INT1 or INT2 pin to trigger when new data is ready.  <a href="class_adafruit___l_i_s3_x.html#a9ebadfd0033853ba53302ffe95f744b4">More...</a><br /></td></tr>
+<tr class="separator:a9ebadfd0033853ba53302ffe95f744b4 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5ffa4bb745b192d6277c10e508faf85 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top"><a id="ae5ffa4bb745b192d6277c10e508faf85"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#ae5ffa4bb745b192d6277c10e508faf85">read</a> (void)</td></tr>
 <tr class="memdesc:ae5ffa4bb745b192d6277c10e508faf85 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads x y z values at once. <br /></td></tr>
@@ -133,6 +127,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a5956f1718268e083e035a0382723e9a6 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#a5956f1718268e083e035a0382723e9a6">getSensor</a> (sensor_t *sensor)</td></tr>
 <tr class="memdesc:a5956f1718268e083e035a0382723e9a6 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the sensor_t data.  <a href="class_adafruit___l_i_s3_x.html#a5956f1718268e083e035a0382723e9a6">More...</a><br /></td></tr>
 <tr class="separator:a5956f1718268e083e035a0382723e9a6 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54714085675be25848d5b75b6e02d3cf inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#a54714085675be25848d5b75b6e02d3cf">enableHighPassFilter</a> (bool filter_enabled, <a class="el" href="_adafruit___l_i_s3_x_8h.html#abb4b1349341f32d5e2f797cb90cc9ad0">lis3x_hpf_cutoff_t</a> cutoff)</td></tr>
+<tr class="memdesc:a54714085675be25848d5b75b6e02d3cf inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the high pass filter and/or slope filter.  <a href="class_adafruit___l_i_s3_x.html#a54714085675be25848d5b75b6e02d3cf">More...</a><br /></td></tr>
+<tr class="separator:a54714085675be25848d5b75b6e02d3cf inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79cfd56db1f0d1f811a3a21965d06245 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#a79cfd56db1f0d1f811a3a21965d06245">setLPFCutoff</a> (<a class="el" href="_adafruit___l_i_s3_x_8h.html#a96ca85d0a778d5c4b0bdc2a5a0166599">lis3x_lpf_cutoff_t</a> cutoff)</td></tr>
+<tr class="memdesc:a79cfd56db1f0d1f811a3a21965d06245 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Low Pass Filter cutoff frequency. Useful for removing high frequency noise while sensing orientation using the acceleration from gravity.  <a href="class_adafruit___l_i_s3_x.html#a79cfd56db1f0d1f811a3a21965d06245">More...</a><br /></td></tr>
+<tr class="separator:a79cfd56db1f0d1f811a3a21965d06245 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ada5a59155b8b1c10cebb411cd0e3b inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#ae5ada5a59155b8b1c10cebb411cd0e3b">setDataRate</a> (<a class="el" href="_adafruit___l_i_s3_x_8h.html#a53243191d76dc05268327e3547d10b0d">lis331_data_rate_t</a> dataRate)</td></tr>
+<tr class="memdesc:ae5ada5a59155b8b1c10cebb411cd0e3b inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the data rate for the LIS3X (controls power consumption)  <a href="class_adafruit___l_i_s3_x.html#ae5ada5a59155b8b1c10cebb411cd0e3b">More...</a><br /></td></tr>
+<tr class="separator:ae5ada5a59155b8b1c10cebb411cd0e3b inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483f18651ed5e985a4332cfa9e0146fe inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_adafruit___l_i_s3_x_8h.html#a53243191d76dc05268327e3547d10b0d">lis331_data_rate_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#a483f18651ed5e985a4332cfa9e0146fe">getDataRate</a> (void)</td></tr>
+<tr class="memdesc:a483f18651ed5e985a4332cfa9e0146fe inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the data rate for the LIS3X (controls power consumption)  <a href="class_adafruit___l_i_s3_x.html#a483f18651ed5e985a4332cfa9e0146fe">More...</a><br /></td></tr>
+<tr class="separator:a483f18651ed5e985a4332cfa9e0146fe inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4802b712a6bd3ff5f4f1fa64dfbe98a3 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_adafruit___l_i_s3_x_8h.html#add88eb7957b49e28c99957e06f9dfb0b">lis331_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#a4802b712a6bd3ff5f4f1fa64dfbe98a3">getMode</a> (void)</td></tr>
+<tr class="memdesc:a4802b712a6bd3ff5f4f1fa64dfbe98a3 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current power mode from the current data rate.  <a href="class_adafruit___l_i_s3_x.html#a4802b712a6bd3ff5f4f1fa64dfbe98a3">More...</a><br /></td></tr>
+<tr class="separator:a4802b712a6bd3ff5f4f1fa64dfbe98a3 inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c3addad40e28ccf532b600ab1daf5a inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_adafruit___l_i_s3_x_8h.html#add88eb7957b49e28c99957e06f9dfb0b">lis331_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#a26c3addad40e28ccf532b600ab1daf5a">getMode</a> (<a class="el" href="_adafruit___l_i_s3_x_8h.html#a53243191d76dc05268327e3547d10b0d">lis331_data_rate_t</a> rate)</td></tr>
+<tr class="memdesc:a26c3addad40e28ccf532b600ab1daf5a inherit pub_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current power mode from a given data rate value.  <a href="class_adafruit___l_i_s3_x.html#a26c3addad40e28ccf532b600ab1daf5a">More...</a><br /></td></tr>
+<tr class="separator:a26c3addad40e28ccf532b600ab1daf5a inherit pub_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -144,12 +156,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad4a07e519b1a100b80c46ddd06f5a7d7 inherit pub_attribs_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#ad4a07e519b1a100b80c46ddd06f5a7d7">z</a></td></tr>
 <tr class="separator:ad4a07e519b1a100b80c46ddd06f5a7d7 inherit pub_attribs_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_adafruit___l_i_s3_x"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_adafruit___l_i_s3_x')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_adafruit___l_i_s3_x.html">Adafruit_LIS3X</a></td></tr>
-<tr class="memitem:afded74c515ae10c0c5a95e1a3a78df9e inherit pro_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#afded74c515ae10c0c5a95e1a3a78df9e">writeDataRate</a> (uint8_t dataRate)</td></tr>
-<tr class="memdesc:afded74c515ae10c0c5a95e1a3a78df9e inherit pro_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the data rate for the LIS3X (controls power consumption)  <a href="class_adafruit___l_i_s3_x.html#afded74c515ae10c0c5a95e1a3a78df9e">More...</a><br /></td></tr>
-<tr class="separator:afded74c515ae10c0c5a95e1a3a78df9e inherit pro_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab34c5d0772e12cf6be70f156c97bbad2 inherit pro_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#ab34c5d0772e12cf6be70f156c97bbad2">readDataRate</a> (void)</td></tr>
-<tr class="memdesc:ab34c5d0772e12cf6be70f156c97bbad2 inherit pro_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the data rate for the LIS3X (controls power consumption)  <a href="class_adafruit___l_i_s3_x.html#ab34c5d0772e12cf6be70f156c97bbad2">More...</a><br /></td></tr>
-<tr class="separator:ab34c5d0772e12cf6be70f156c97bbad2 inherit pro_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a018f2d7aaee59af3adcea53129f289d2 inherit pro_methods_class_adafruit___l_i_s3_x"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_adafruit___l_i_s3_x.html#a018f2d7aaee59af3adcea53129f289d2">writeRange</a> (uint8_t range)</td></tr>
 <tr class="memdesc:a018f2d7aaee59af3adcea53129f289d2 inherit pro_methods_class_adafruit___l_i_s3_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the measurement range for the sensor.  <a href="class_adafruit___l_i_s3_x.html#a018f2d7aaee59af3adcea53129f289d2">More...</a><br /></td></tr>
 <tr class="separator:a018f2d7aaee59af3adcea53129f289d2 inherit pro_methods_class_adafruit___l_i_s3_x"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -321,53 +327,6 @@ Adafruit_SPIDevice *&#160;</td><td class="memItemRight" valign="bottom"><a class
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if initialization was successful, otherwise false. </dd></dl>
-
-</div>
-</div>
-<a id="a1d3dfd0d8513fac3ec09261050481649"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d3dfd0d8513fac3ec09261050481649">&#9670;&nbsp;</a></span>setDataRate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Adafruit_LIS331HH::setDataRate </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="_adafruit___l_i_s331_h_h_8h.html#a575e263d4be877cca89e853ee421e98a">lis331hh_dataRate_t</a>&#160;</td>
-          <td class="paramname"><em>dataRate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the data rate for the H3LIS331 (controls power consumption) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dataRate</td><td>data rate value </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acddb8d123037bd1049205cbd4cd5bc38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acddb8d123037bd1049205cbd4cd5bc38">&#9670;&nbsp;</a></span>getDataRate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_adafruit___l_i_s331_h_h_8h.html#a575e263d4be877cca89e853ee421e98a">lis331hh_dataRate_t</a> Adafruit_LIS331HH::getDataRate </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the data rate for the H3LIS331 (controls power consumption) </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns Data Rate value </dd></dl>
 
 </div>
 </div>
