@@ -11,9 +11,6 @@ Prints plotter formatted  measurements before and after having the filters appli
 #include <Adafruit_LIS331HH.h>
 #include <Adafruit_Sensor.h>
 
-unsigned long time;
-unsigned long last_time;
-
 bool waiting_to_reset;
 //Adafruit_H3LIS331 lis = Adafruit_H3LIS331();
 Adafruit_LIS331HH lis = Adafruit_LIS331HH();
@@ -39,9 +36,6 @@ void setup(void) {
 //  lis.setHPFReference(127); // value is signed from -127 to 127 for negative and positive offsets
 //  Serial.print("HPF reference: ");Serial.println(lis.getHPFReference());
 
-  time = micros();
-  last_time = time;
-  waiting_to_reset = false;
 }
 
 void loop() {
