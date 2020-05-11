@@ -21,7 +21,7 @@
 #ifndef ADAFRUIT_LIS331HH_H
 #define ADAFRUIT_LIS331HH_H
 
-#include "Adafruit_LIS3X.h"
+#include "Adafruit_LIS331.h"
 
 /** I2C ADDRESS/BITS **/
 #define LIS331HH_DEFAULT_ADDRESS (0x18) // if SDO/SA0 is 3V, its 0x19
@@ -37,11 +37,11 @@ typedef enum {
  *  @brief  Class that stores state and functions for interacting with
  *          Adafruit_LIS331HH
  */
-class Adafruit_LIS331HH : public Adafruit_LIS3X {
+class Adafruit_LIS331HH : public Adafruit_LIS331 {
 public:
   Adafruit_LIS331HH();
 
-  bool begin_I2C(uint8_t i2c_addr = LIS3X_DEFAULT_ADDRESS,
+  bool begin_I2C(uint8_t i2c_addr = LIS331_DEFAULT_ADDRESS,
                  TwoWire *wire = &Wire, int32_t sensorID = 0);
 
   bool begin_SPI(uint8_t cs_pin, SPIClass *theSPI = &SPI,

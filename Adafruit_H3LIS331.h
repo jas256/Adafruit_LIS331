@@ -20,7 +20,7 @@
 #ifndef ADAFRUIT_H3LIS331_H
 #define ADAFRUIT_H3LIS331_H
 
-#include "Adafruit_LIS3X.h"
+#include "Adafruit_LIS331.h"
 
 /** A structure to represent scales **/
 typedef enum {
@@ -33,11 +33,11 @@ typedef enum {
  *  @brief  Class that stores state and functions for interacting with
  *          Adafruit_H3LIS331
  */
-class Adafruit_H3LIS331 : public Adafruit_LIS3X {
+class Adafruit_H3LIS331 : public Adafruit_LIS331 {
 public:
   Adafruit_H3LIS331();
 
-  bool begin_I2C(uint8_t i2c_addr = LIS3X_DEFAULT_ADDRESS,
+  bool begin_I2C(uint8_t i2c_addr = LIS331_DEFAULT_ADDRESS,
                  TwoWire *wire = &Wire, int32_t sensorID = 0);
 
   bool begin_SPI(uint8_t cs_pin, SPIClass *theSPI = &SPI,

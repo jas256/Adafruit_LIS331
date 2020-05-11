@@ -107,7 +107,7 @@ bool Adafruit_H3LIS331::_init(int32_t sensor_id) {
     return false;
   }
   Adafruit_BusIO_Register _ctrl1 = Adafruit_BusIO_Register(
-      i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS3X_REG_CTRL1, 1);
+      i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS331_REG_CTRL1, 1);
   _ctrl1.write(0x07); // enable all axes, normal mode
 
   setDataRate(LIS331_DATARATE_1000_HZ);
