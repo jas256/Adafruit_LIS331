@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lis3x_5fhpf_5fcutoff_5ft',['lis3x_hpf_cutoff_t',['../_adafruit___l_i_s3_x_8h.html#abb4b1349341f32d5e2f797cb90cc9ad0',1,'Adafruit_LIS3X.h']]]
+  ['lis331_5fhpf_5fcutoff_5ft',['lis331_hpf_cutoff_t',['../_adafruit___l_i_s331_8h.html#afac880d7dbc43574a20075ba3a9c5b4b',1,'Adafruit_LIS331.h']]]
 ];
