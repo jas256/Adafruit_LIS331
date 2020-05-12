@@ -40,16 +40,16 @@ void setup(void) {
   Serial.print("Data rate set to: ");
   switch (lis.getDataRate()) {
 
-    case LIS331HH_DATARATE_POWERDOWN: Serial.println("Powered Down"); break;
-    case LIS331HH_DATARATE_50_HZ: Serial.println("50 Hz"); break;
-    case LIS331HH_DATARATE_100_HZ: Serial.println("100 Hz"); break;
-    case LIS331HH_DATARATE_400_HZ: Serial.println("400 Hz"); break;
-    case LIS331HH_DATARATE_1000_HZ: Serial.println("1000 Hz"); break;
-    case LIS331HH_DATARATE_LOWPOWER_0_5_HZ: Serial.println("0.5 Hz Low Power"); break;
-    case LIS331HH_DATARATE_LOWPOWER_1_HZ: Serial.println("1 Hz Low Power"); break;
-    case LIS331HH_DATARATE_LOWPOWER_2_HZ: Serial.println("2 Hz Low Power"); break;
-    case LIS331HH_DATARATE_LOWPOWER_5_HZ: Serial.println("5 Hz Low Power"); break;
-    case LIS331HH_DATARATE_LOWPOWER_10_HZ: Serial.println("10 Hz Low Power"); break;
+    case LIS331_DATARATE_POWERDOWN: Serial.println("Powered Down"); break;
+    case LIS331_DATARATE_50_HZ: Serial.println("50 Hz"); break;
+    case LIS331_DATARATE_100_HZ: Serial.println("100 Hz"); break;
+    case LIS331_DATARATE_400_HZ: Serial.println("400 Hz"); break;
+    case LIS331_DATARATE_1000_HZ: Serial.println("1000 Hz"); break;
+    case LIS331_DATARATE_LOWPOWER_0_5_HZ: Serial.println("0.5 Hz Low Power"); break;
+    case LIS331_DATARATE_LOWPOWER_1_HZ: Serial.println("1 Hz Low Power"); break;
+    case LIS331_DATARATE_LOWPOWER_2_HZ: Serial.println("2 Hz Low Power"); break;
+    case LIS331_DATARATE_LOWPOWER_5_HZ: Serial.println("5 Hz Low Power"); break;
+    case LIS331_DATARATE_LOWPOWER_10_HZ: Serial.println("10 Hz Low Power"); break;
 
   }
 }

@@ -4,7 +4,7 @@
 # doxygen
 Doxyfile*
 doxygen_sqlite3.db
-html
+html/
 *.tmp
 # arduino-cli
 *.hex

@@ -31,7 +31,7 @@ void setup(void) {
   Serial.println("LIS331 found!");
 
   lis.setRange(H3LIS331_RANGE_100_G);   // 100, 200, or 400 G!
-  lis.setDataRate(H3LIS331_DATARATE_LOWPOWER_0_5_HZ);
+  lis.setDataRate(LIS331_DATARATE_LOWPOWER_0_5_HZ);
 
 //  bool configIntDataReady(uint8_t irqnum=1, bool activelow=true, bool opendrain=true);
 
