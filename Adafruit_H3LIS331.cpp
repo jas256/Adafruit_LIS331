@@ -109,7 +109,7 @@ bool Adafruit_H3LIS331::_init(int32_t sensor_id) {
   Adafruit_BusIO_Register _ctrl1 = Adafruit_BusIO_Register(
       i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS331_REG_CTRL1, 1);
   _ctrl1.write(0x07); // enable all axes, normal mode
-
+  enableHighPassFilter(false);
   setDataRate(LIS331_DATARATE_1000_HZ);
   setRange(H3LIS331_RANGE_400_G);
 
@@ -131,7 +131,7 @@ void Adafruit_H3LIS331::_scaleValues(void) {
   if (range == H3LIS331_RANGE_400_G)
     scale_max = 400;
 
-  float lsb_value = 2 * scale_max * (float)1 / 4098;
+  float lsb_value = 2 * scale_max * (float)1 / 4096;
 
   x_g = ((float)x * lsb_value);
   y_g = ((float)y * lsb_value);

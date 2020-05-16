@@ -137,11 +137,11 @@ void Adafruit_LIS331::enableHighPassFilter(bool filter_enabled,
   Adafruit_BusIO_RegisterBits HPF_cuttoff =
       Adafruit_BusIO_RegisterBits(&ctrl2_reg, 2, 0);
 
-  HPF_mode.write(use_reference); // "Reference signal for filtering"
-
-  // HPF_mode.write(filter_enabled);
+  if (filter_enabled) {
+    HPF_mode.write(use_reference);
+    HPF_cuttoff.write(cutoff);
+  }
   HPF_internal_filter_en.write(filter_enabled);
-  HPF_cuttoff.write(cutoff);
 }
 
 /**
@@ -152,9 +152,9 @@ void Adafruit_LIS331::enableHighPassFilter(bool filter_enabled,
  depends on the selected range:
  *
  *  * Full scale Reference mode LSB value (mg)
-    2g                    ~16
-    4g                    ~31
-    8g                    ~63
+    6g/100g                     ~16mg
+    12g/200g                    ~31mg
+    24g/400g                    ~63mg
  */
 void Adafruit_LIS331::setHPFReference(int8_t reference) {
   Adafruit_BusIO_Register reference_reg = Adafruit_BusIO_Register(

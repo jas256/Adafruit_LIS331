@@ -110,6 +110,7 @@ bool Adafruit_LIS331HH::_init(int32_t sensor_id) {
       i2c_dev, spi_dev, ADDRBIT8_HIGH_TOREAD, LIS331_REG_CTRL1, 1);
   _ctrl1.write(0x07); // enable all axes, normal mode
 
+  enableHighPassFilter(false);
   setDataRate(LIS331_DATARATE_1000_HZ);
   setRange(LIS331HH_RANGE_24_G);
 
@@ -132,7 +133,7 @@ void Adafruit_LIS331HH::_scaleValues(void) {
   if (range == LIS331HH_RANGE_24_G)
     scale_max = 24;
 
-  float lsb_value = 2 * scale_max * (float)1 / 4098;
+  float lsb_value = 2 * scale_max * (float)1 / 4096;
 
   x_g = ((float)x * lsb_value);
   y_g = ((float)y * lsb_value);
