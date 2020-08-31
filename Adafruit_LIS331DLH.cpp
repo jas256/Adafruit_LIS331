@@ -145,7 +145,7 @@ void Adafruit_LIS331DLH::_scaleValues(void) {
  *  @param  range The range to set
  */
 
-void Adafruit_LIS331DLH::setRange(lis331hh_range_t range) {
+void Adafruit_LIS331DLH::setRange(lis331dlh_range_t range) {
   writeRange((uint8_t)range);
 }
 
@@ -153,7 +153,7 @@ void Adafruit_LIS331DLH::setRange(lis331hh_range_t range) {
  *   @brief  Gets the measurement range for the H3LIS331
  *   @return The range value
  */
-lis331hh_range_t Adafruit_LIS331DLH::getRange(void) {
+lis331dlh_range_t Adafruit_LIS331DLH::getRange(void) {
 
-  return (lis331hh_range_t)readRange();
+  return (lis331dlh_range_t)readRange();
 }
